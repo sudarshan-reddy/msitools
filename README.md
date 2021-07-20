@@ -14,6 +14,27 @@ Installer.
 *msitools* plans to be a solution for packaging and deployment of
 cross-compiled Windows applications.
 
+## Build from Source
+
+*Prerequisites:* meson, bison. 
+
+```bash
+meson setup builddir
+meson compile 
+```
+
+Note: If you run into this error:
+```bash
+FAILED: libmsi/sql-parser.c libmsi/sql-parser.h
+/usr/bin/bison ../libmsi/sql-parser.y -y -Wno-yacc --defines -o libmsi/sql-parser.c
+/Library/Developer/CommandLineTools/usr/bin/bison: invalid option -- W
+Try `/Library/Developer/CommandLineTools/usr/bin/bison --help' for more information.
+[4/56] Generating libmsi-enums.c with a custom command (wrapped by meson to capture output)
+ninja: build stopped: subcommand failed.
+```
+
+when building in Macos. Ensure you `brew install bison` and use that instead of the one at `usr/bin/bison`. 
+
 ## Tools
 
 Provided tools include:

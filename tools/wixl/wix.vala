@@ -66,6 +66,7 @@ namespace Wixl {
         public abstract void visit_binary (WixBinary binary) throws GLib.Error;
         public abstract void visit_major_upgrade (WixMajorUpgrade major) throws GLib.Error;
         public abstract void visit_media_template (WixMediaTemplate media) throws GLib.Error;
+        public abstract void visit_environment (WixEnvironment env) throws GLib.Error;
     }
 
     public abstract class WixNode: Object {
@@ -1058,6 +1059,7 @@ namespace Wixl {
                 typeof (WixRegistryKey),
                 typeof (WixServiceControl),
                 typeof (WixServiceInstall),
+                typeof (WixEnvironment)
             });
         }
 
@@ -1151,6 +1153,25 @@ namespace Wixl {
                 typeof (WixFragment),
             });
         }
+    }
+
+   public class WixEnvironment: WixElement {
+        static construct {
+            name = "Environment";
+        }
+
+        public string Action { get; set; }
+        public string Name { get; set; }
+        public string Part { get; set; }
+        public string Permanent { get; set; }
+        public string Separator { get; set; }
+        public string System { get; set; }
+        public string Value { get; set; }
+
+        public override void accept (WixNodeVisitor visitor) throws GLib.Error {
+            visitor.visit_environment(this);
+        }
+
     }
 
 } // Wixl

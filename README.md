@@ -1,5 +1,8 @@
 # msitools
 
+Note: This is a temporary fork of the awesome https://gitlab.gnome.org/GNOME/msitools to add support to
+use Environment Variables in Wix configuration. Once this issue is resolved in the origin repo, this repo may be deleted/archived. 
+
 ## Introduction
 
 *msitools* is a set of programs to inspect and build Windows Installer

@@ -1,7 +1,7 @@
 # msitools
 
 Note: This is a temporary fork of the awesome https://gitlab.gnome.org/GNOME/msitools to add support to
-use Environment Variables in Wix configuration. Once this issue is resolved in the origin repo, this repo may be deleted/archived. 
+use Environment Variables in Wix configuration until this PR is merged: https://gitlab.gnome.org/GNOME/msitools/-/merge_requests/42.  
 
 ## Introduction
 
